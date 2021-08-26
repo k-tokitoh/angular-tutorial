@@ -13,6 +13,7 @@ import { Crisis } from '../crisis';
 })
 export class CrisisDetailComponent implements OnInit {
   crisis$!: Observable<Crisis>;
+  crisis!: Crisis;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,5 +25,14 @@ export class CrisisDetailComponent implements OnInit {
     this.crisis$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => this.service.getCrisis(params.get('id')!))
     );
+    this.crisis$.subscribe((crisis) => {
+      this.crisis = crisis;
+    });
+  }
+
+  gotoCrises() {
+    this.router.navigate(['../', { id: this.crisis.id }], {
+      relativeTo: this.route,
+    });
   }
 }
