@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../../message.service';
@@ -10,18 +15,25 @@ import { MessageService } from '../../message.service';
 })
 export class HeroListComponent implements OnInit {
   heroes: Hero[] = [];
+  selectedId = 0;
 
   constructor(
     private heroService: HeroService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.getHeroes();
+    this.route.paramMap.subscribe((params) => {
+      this.selectedId = parseInt(params.get('id')!, 10);
+    });
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
+    this.heroService.getHeroes().subscribe((heroes) => {
+      this.heroes = heroes;
+    });
   }
 
   add(name: string): void {

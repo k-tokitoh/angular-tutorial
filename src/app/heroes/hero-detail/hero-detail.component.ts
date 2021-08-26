@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
@@ -16,10 +16,12 @@ export class HeroDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-    private location: Location
+    // private location: Location
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    // idを書き換えてインスタンスを再利用する可能性があるときはobservableをつかうべき。
     this.getHero();
   }
 
@@ -35,6 +37,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    // this.location.back();
+    this.router.navigate(['/heroes', { id: this.hero?.id }]);
   }
 }
