@@ -13,6 +13,7 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InMemoryDataService } from './in-memory-data.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FeedbackerComponent } from './feedbacker/feedbacker.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MessagesComponent,
     DashboardComponent,
     PageNotFoundComponent,
+    FeedbackerComponent,
   ],
   imports: [
     BrowserModule,
