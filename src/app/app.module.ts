@@ -11,7 +11,7 @@ import { HeroesModule } from './heroes/heroes.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './heroes/hero-search/hero-search.component';
-import { CrisisListComponent } from './crisis-list/crisis-list.component';
+import { CrisisListComponent } from './crisis-center/crisis-list/crisis-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({

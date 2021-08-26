@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroListComponent } from './heroes/hero-list/hero-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './heroes/hero-detail/hero-detail.component';
-import { CrisisListComponent } from './crisis-list/crisis-list.component';
+import { CrisisListComponent } from './crisis-center/crisis-list/crisis-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
