@@ -1,0 +1,8 @@
+<div *ngIf="crisis$ | async as crisis">
+  <h2>{{ crisis.name }} Details</h2>
+  <div><span>id: </span>{{ crisis.id }}</div>
+  <div>
+    <label for="crisis-name">Crisis name: </label>
+    <input id="crisis-name" [(ngModel)]="crisis.name" placeholder="name" />
+  </div>
+</div>
