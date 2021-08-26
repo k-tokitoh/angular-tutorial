@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
+import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-home.component';
 import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
 
 const crisisCenterRoutes: Routes = [
   {
-    path: '',
+    path: 'crisis-center',
     component: CrisisCenterComponent,
     children: [
       {
@@ -17,6 +18,10 @@ const crisisCenterRoutes: Routes = [
           {
             path: ':id',
             component: CrisisDetailComponent,
+          },
+          {
+            path: '',
+            component: CrisisCenterHomeComponent,
           },
         ],
       },

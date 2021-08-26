@@ -8,10 +8,9 @@ import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeroesModule } from './heroes/heroes.module';
+import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InMemoryDataService } from './in-memory-data.service';
-import { HeroSearchComponent } from './heroes/hero-search/hero-search.component';
-import { CrisisListComponent } from './crisis-center/crisis-list/crisis-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -19,14 +18,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent,
-    CrisisListComponent,
     PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HeroesModule,
+    CrisisCenterModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {

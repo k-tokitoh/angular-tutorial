@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
 
 @NgModule({
   imports: [CommonModule, FormsModule, HeroesRoutingModule],
-  declarations: [HeroListComponent, HeroDetailComponent],
+  declarations: [HeroListComponent, HeroDetailComponent, HeroSearchComponent],
 })
 export class HeroesModule {}
